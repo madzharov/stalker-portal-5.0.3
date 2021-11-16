@@ -41,7 +41,7 @@ Accordingly, during the installation, when executing the last command, phing wil
 
 
 
-You can access your stalker portal at: http://ipadres/stalker_portal/server/administrator The username and password to login to the portal are your default
+You can access your stalker portal at: http://ipadres/stalker_portal The username and password to login to the portal are your default
 ```
 Login: admin
 pass: 1

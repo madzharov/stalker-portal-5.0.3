@@ -118,7 +118,7 @@ sed -i "686i\                    this.profile.clock_format = (get_word('time_for
 sed -i "687i\                }\n" /var/www/html/stalker_portal/c/xpcom.common.js
 
 sed -i 's/short_open_tag = Off/short_open_tag = On/g' /etc/php/5.6/apache2/php.ini
-ln -s /etc/php/5.6/mods-available/mcrypt.ini /etc/php/8.0/mods-available/
+ln -s /etc/php/5.6/mods-available/mcrypt.ini /etc/php/8.4/mods-available/
 phpenmod mcrypt
 a2enmod rewrite
 
@@ -151,14 +151,14 @@ wget -O custom.ini $repository/custom.ini
 
 cd /var/www/html/stalker_portal/deploy/composer/
 rm -rf composer.phar
-wget https://getcomposer.org/download/1.9.0/composer.phar
+wget $repository/composer_version_1.10.28.phar -O composer.phar
 chmod 755 composer.phar
 
 cd /var/www/html/stalker_portal/server
 sed -i 's/launcher_apps_repos/;launcher_apps_repos/g' config.ini
 
 cd /var/www/html/stalker_portal/deploy
-sed -i 's/composer.phar self-update/composer.phar self-update -- 1.9.1/g' build.xml
+sed -i 's/composer.phar self-update/composer.phar self-update -- 1.10.28/g' build.xml
 sed -i 's/apt-get -y install php-soap php5-intl php-gettext php5-memcache php5-curl php5-mysql php5-mcrypt php5-tidy php5-imagick php5-geoip curl npm/apt-get -y install php5.6-soap php5.6-intl php5.6-gettext php5.6-memcache php5.6-curl php5.6-mysql php5.6-mcrypt php5.6-tidy php5.6-imagick php5.6-geoip curl npm/' build.xml
 sed -i 's|/etc/php5/|/etc/php/5.6/|g' build.xml
 sudo phing

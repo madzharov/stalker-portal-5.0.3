@@ -61,7 +61,7 @@ sleep 2
 echo -e " \e[32mInstalling phing\e[0m"
 sleep 3
 pear channel-discover pear.phing.info
-pear install --alldeps phing/phing-2.15.2
+pear install phing/phing-2.15.2
 
 echo -e " \e[32minstalling npm 2.15.11\e[0m"
 sleep 3

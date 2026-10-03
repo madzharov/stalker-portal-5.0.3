@@ -167,9 +167,9 @@ cd /var/www/html/stalker_portal/server
 sed -i 's/launcher_apps_repos/;launcher_apps_repos/g' config.ini
 
 cd /var/www/html/stalker_portal/deploy
-sed -i 's/composer.phar self-update/composer.phar self-update --version=1.10.28/g' build.xml
+sed -i 's/composer.phar self-update/composer.phar self-update 1.10.28/g' build.xml
 sed -i '/composer.phar install/i \        <exec command="php ${project_path}\/deploy\/composer\/composer2.phar install --no-dev --no-suggest --no-interaction" level="info" outputProperty="install.error.msg" returnProperty="install.error.code"\/>' build.xml
-sed -i 's/composer.phar install/composer.phar install --version=1.10.28/g' build.xml
+#sed -i 's/composer.phar install/composer.phar install --version=1.10.28/g' build.xml
 sed -i 's/apt-get -y install php-soap php5-intl php-gettext php5-memcache php5-curl php5-mysql php5-mcrypt php5-tidy php5-imagick php5-geoip curl npm/apt-get -y install php5.6-soap php5.6-intl php5.6-gettext php5.6-memcache php5.6-curl php5.6-mysql php5.6-mcrypt php5.6-tidy php5.6-imagick php5.6-geoip curl npm/' build.xml
 sed -i 's|/etc/php5/|/etc/php/5.6/|g' build.xml
 sudo phing

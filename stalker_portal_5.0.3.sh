@@ -73,6 +73,8 @@ npm install -g npm@2.15.11
 
 echo -e " \e[32mSet the Server Timezone to EDT\e[0m"
 sleep 3
+sudo ln -sf /usr/share/zoneinfo/Europe/Kyiv /usr/share/zoneinfo/Europe/Kiev
+sudo ln -fs /usr/share/zoneinfo/Europe/Amsterdam /etc/localtime
 timedatectl set-timezone $TIME_ZONE
 dpkg-reconfigure -f noninteractive tzdata
 
